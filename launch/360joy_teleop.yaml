@@ -1,0 +1,17 @@
+# Modified from https://github.com/pal-robotics/reem_robot/blob/df7e7973de1207c99a6cfb1a5c4c89bff863f49a/reem_bringup/config/joy_teleop.yaml on 2019
+
+teleop:
+  move:
+    type: topic
+    message_type: geometry_msgs/Twist
+    topic_name: cmd_vel
+    deadman_buttons: [0]
+    axis_mappings:
+      -
+        axis: 1
+        target: linear.x
+        scale: 1.0
+      -
+        axis: 0
+        target: angular.z
+        scale: 1.0

@@ -1,0 +1,19 @@
+<!-- Modified form https://github.com/pal-robotics/reem_robot/blob/a22cfdbe7dcf2cc533ad8954f0430ff0ffbb86c8/reem_bringup/launch/joystick_teleop.launch on 2019 -->
+
+<launch>
+
+  <arg name="cmd_vel" default="input_joy/cmd_vel" />
+  <!-- <arg name="teleop_config" default="/home/tecchio/code/catkin_tutorials_ws/src/husky_clearpath/launch/teleop_for_husky.yaml" /> -->
+  <arg name="teleop_config" default="$(find 360joy_teleop)/launch/360joy_teleop.yaml" />
+
+  <rosparam file="$(arg teleop_config)" command="load" />
+  <node pkg="joy_teleop" type="joy_teleop.py" name="joy_teleop">
+    <remap from="cmd_vel" to="joy_teleop/cmd_vel" />
+  </node>
+
+  <node pkg="joy" type="joy_node" name="joystick">
+    <param name="autorepeat_rate" value="10" />
+  </node>
+
+</launch>
+
