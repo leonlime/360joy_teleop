@@ -3,7 +3,6 @@
 <launch>
 
   <arg name="cmd_vel" default="input_joy/cmd_vel" />
-  <!-- <arg name="teleop_config" default="/home/tecchio/code/catkin_tutorials_ws/src/husky_clearpath/launch/teleop_for_husky.yaml" /> -->
   <arg name="teleop_config" default="$(find 360joy_teleop)/launch/360joy_teleop.yaml" />
 
   <rosparam file="$(arg teleop_config)" command="load" />
