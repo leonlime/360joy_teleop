@@ -14,4 +14,4 @@ teleop:
       -
         axis: 0
         target: angular.z
-        scale: 1.0
+        scale: -1.0 # change to positive to invert
