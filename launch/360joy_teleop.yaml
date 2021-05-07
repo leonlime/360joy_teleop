@@ -3,15 +3,19 @@
 teleop:
   move:
     type: topic
-    message_type: geometry_msgs/Twist
-    topic_name: cmd_vel
+    message_type: geometry_msgs/Wrench
+    topic_name: turbot/thruster_manager/input
     deadman_buttons: [0]
     axis_mappings:
       -
+        axis: 2
+        target: force.z
+        scale: 7.0
+      -
         axis: 1
-        target: linear.x
-        scale: 1.0
+        target: force.x
+        scale: 5.0
       -
         axis: 0
-        target: angular.z
-        scale: -1.0 # change to positive to invert
+        target: torque.z
+        scale: -5.0 # change to positive to invert
