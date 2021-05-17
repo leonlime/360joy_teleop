@@ -10,7 +10,7 @@ teleop:
       -
         axis: 2
         target: force.z
-        scale: 7.0
+        scale: -7.0
       -
         axis: 1
         target: force.x
